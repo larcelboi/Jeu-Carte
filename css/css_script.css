@@ -26,6 +26,7 @@ body{
 .sous_carte{
     background-color:black ;
     border: 2px solid white;
+    border-radius: 10px;
     height: 75px;
     width: 50px;
     display: flex;
@@ -33,4 +34,9 @@ body{
     align-items: center;
     color:red;
     font-size: 25pt;
+    transition: 0.4s ease-in-out;
+}
+.sous_carte:hover{
+    background-color:white;
+    color: white;
 }
