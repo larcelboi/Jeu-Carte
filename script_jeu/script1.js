@@ -4,13 +4,11 @@ const boxCarte = document.querySelector("#boxC");
 btnCommencer.addEventListener("click", (e) => {
     // Création carte
     const carte = document.createElement("div");
+    carte.classList.add("carte");
     const sous_carte = document.createElement("div");
+    sous_carte.classList.add("sous_carte");
 
-    //  edit look carte
-    carte.style.backgroundColor = "black";
-
-    sous_carte.style.border = "5px solid white";
-    sous_carte.style.backgroundColor = "black";
+    sous_carte.textContent = "?";
 
     // Ajouter sous carte dans carte
     carte.append(sous_carte);

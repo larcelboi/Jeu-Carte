@@ -1,5 +1,5 @@
 body{
-    background: black;
+    background: white;
 }
 
 .btnCommencer{
@@ -7,11 +7,30 @@ body{
     padding: 10px;
 }
 .welcomeText{
-    color: white;
+    color: black;
     font-weight: bold;
     padding: 10px;
 }
 .BoxCarte{
-    display: inline-block;
-    padding: 10px;
+    display: flex;
+}
+.carte{
+    background-color:black ;
+    height: 100px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+.sous_carte{
+    background-color:black ;
+    border: 2px solid white;
+    height: 75px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:red;
+    font-size: 25pt;
 }
