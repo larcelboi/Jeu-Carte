@@ -1,0 +1,17 @@
+body{
+    background: black;
+}
+
+.btnCommencer{
+    border-radius: 10px;
+    padding: 10px;
+}
+.welcomeText{
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+.BoxCarte{
+    display: inline-block;
+    padding: 10px;
+}
