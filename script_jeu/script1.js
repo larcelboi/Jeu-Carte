@@ -1,7 +1,9 @@
 const btnCommencer = document.querySelector("#btnCom");
 const boxCarte = document.querySelector("#boxC");
 const liste_chiffre = []
+const liste_carte_paire = []
 let commencer_prtie = false
+// try to use inner html with this sh
 
 btnCommencer.addEventListener("click", (e) => {
     // fonction création 12 carte
@@ -52,7 +54,19 @@ boxCarte.addEventListener("click", (e) => {
                 if (repetition_chiffre < 2 ) {
                     liste_chiffre.push(index_dans_liste)
                     carte_choisie.textContent = type_emoji[index_dans_liste];
-                    break
+                    CartPaire();
+                    break;
+                }
+            }
+        }
+        function CartPaire(){
+            liste_carte_paire.push(carte_choisie.textContent);
+            if (liste_carte_paire.length === 2){
+                if(liste_carte_paire.filter(text => text ===carte_choisie.textContent).length ===2){
+                    alert("trouver")
+                }
+                else{
+                    liste_carte_paire.remove();
                 }
             }
         }
