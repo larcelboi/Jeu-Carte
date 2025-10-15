@@ -58,7 +58,7 @@ boxCarte.addEventListener("click", (e) => {
             setTimeout(() => {
                 carte_choisie.style.backgroundColor = "black";
                 carte_choisie.style.color = "white";
-                setTimeout(CartPaire,800)
+                setTimeout(CartPaire,500)
             }, 1000 * 5)
         }
     }
