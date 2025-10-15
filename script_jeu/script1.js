@@ -43,13 +43,13 @@ boxCarte.addEventListener("click", (e) => {
     }
     if (carte_choisie.id in dict_carte_emoji) {
         carte_choisie.textContent = dict_carte_emoji[carte_choisie.id];
-        reaffichageCarte();
+        retransitionEmojiCarte();
     }
     else{
-        Carte();
+        transitionEmojiCarte();
     }
 
-    function reaffichageCarte() {
+    function retransitionEmojiCarte() {
         if (e.target.classList.contains("sous_carte")) {
             console.log(carte_choisie);
             carte_choisie.style.transition = "backgroundcolor 0.5 ease-in-out,color 0.5 ease-in-out ";
@@ -59,11 +59,11 @@ boxCarte.addEventListener("click", (e) => {
             setTimeout(() => {
                 carte_choisie.style.backgroundColor = "black";
                 carte_choisie.style.color = "white";
-                setTimeout(CartPaire,500)
-            }, 1000 * 5)
+                setTimeout(trouverSiCartePaire,1000 * 2)
+            }, 100 * 8)
         }
     }
-    function Carte() {
+    function transitionEmojiCarte() {
         if (e.target.classList.contains("sous_carte")) {
             console.log(carte_choisie);
             carte_choisie.style.transition = "backgroundcolor 0.5 ease-in-out,color 0.5 ease-in-out ";
@@ -73,12 +73,12 @@ boxCarte.addEventListener("click", (e) => {
             setTimeout(() => {
                 carte_choisie.style.backgroundColor = "black";
                 carte_choisie.style.color = "white";
-                ChangerText(type_emoji)
+                changerEmoji(type_emoji)
             }, 100 * 8)
         }
     }
 
-    function ChangerText(type_emoji){
+    function changerEmoji(type_emoji){
         while (true){
             let index_dans_liste = Math.floor(Math.random() * type_emoji.length)
             const repetition_chiffre = liste_chiffre.filter( chiffre => chiffre.id === index_dans_liste).length
@@ -86,13 +86,13 @@ boxCarte.addEventListener("click", (e) => {
                 liste_chiffre.push(carte_choisie)
                 carte_choisie.textContent = type_emoji[index_dans_liste];
                 dict_carte_emoji[carte_choisie.id] = type_emoji[index_dans_liste]
-                setTimeout(CartPaire,1000*2)
+                setTimeout(trouverSiCartePaire,1000*2)
                 break;
             }
         }
     }
 
-    function CartPaire(){
+    function trouverSiCartePaire(){
         liste_carte_paire.push(carte_choisie);
         let i = 0
         const nombre_carte_paire = liste_carte_paire.filter(text => text.textContent ===carte_choisie.textContent).length
