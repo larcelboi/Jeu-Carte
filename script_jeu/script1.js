@@ -48,6 +48,7 @@ boxCarte.addEventListener("click", (e) => {
     else{
         Carte();
     }
+
     function reaffichageCarte() {
         if (e.target.classList.contains("sous_carte")) {
             console.log(carte_choisie);
