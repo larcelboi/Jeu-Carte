@@ -58,8 +58,8 @@ boxCarte.addEventListener("click", (e) => {
             setTimeout(() => {
                 carte_choisie.style.backgroundColor = "black";
                 carte_choisie.style.color = "white";
-                CartPaire();
-            }, 100 * 8)
+                setTimeout(CartPaire,800)
+            }, 1000 * 5)
         }
     }
     function Carte() {
@@ -85,7 +85,7 @@ boxCarte.addEventListener("click", (e) => {
                 liste_chiffre.push(carte_choisie)
                 carte_choisie.textContent = type_emoji[index_dans_liste];
                 dict_carte_emoji[carte_choisie.id] = type_emoji[index_dans_liste]
-                CartPaire();
+                setTimeout(CartPaire,1000*2)
                 break;
             }
         }
