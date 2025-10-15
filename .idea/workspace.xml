@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a4adbeb-4691-482d-9171-efc1586009ae" name="Changes" comment="fix a bug">
+    <list default="true" id="0a4adbeb-4691-482d-9171-efc1586009ae" name="Changes" comment="asasas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script_jeu/script1.js" beforeDir="false" afterPath="$PROJECT_DIR$/script_jeu/script1.js" afterDir="false" />
     </list>
@@ -32,31 +32,41 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="344NT9Sgoy3nET6BFuFc93HJTNR" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JavaScript Debug.sie_mem.html.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.site_mem.html.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.sie_mem.html.executor": "Run",
+    "JavaScript Debug.site_mem.html.executor": "Debug",
+    "Node.js.script1.js.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/larce_3viq11h/WebstormProjects/Jeu-Carte/script_jeu",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\larce_3viq11h\WebstormProjects\Jeu-Carte\script_jeu" />
+    </key>
+  </component>
   <component name="RunManager" selected="JavaScript Debug.site_mem.html">
     <configuration name="site_mem.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Jeu-Carte/site_jeu_mem/site_mem.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="script1.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/script_jeu/script1.js" working-dir="$PROJECT_DIR$/script_jeu">
+    <configuration name="script1.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="script1.js" working-dir="$PROJECT_DIR$/script_jeu">
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -69,7 +79,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-WS-251.26927.40" />
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-WS-252.23892.411" />
       </set>
     </attachedChunks>
   </component>
@@ -87,6 +97,7 @@
       <workItem from="1760551736112" duration="236000" />
       <workItem from="1760551983182" duration="93000" />
       <workItem from="1760554465694" duration="701000" />
+      <workItem from="1760564608879" duration="1157000" />
     </task>
     <task id="LOCAL-00001" summary="créatuion carte">
       <option name="closed" value="true" />
@@ -168,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760550483054</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="asasas">
+      <option name="closed" value="true" />
+      <created>1760564644678</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1760564644678</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,15 +200,17 @@
     <MESSAGE value="adasd" />
     <MESSAGE value="sdfs" />
     <MESSAGE value="fix a bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix a bug" />
+    <MESSAGE value="asasas" />
+    <option name="LAST_COMMIT_MESSAGE" value="asasas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/script_jeu/script1.js</url>
-          <line>96</line>
-          <option name="timeStamp" value="17" />
+          <line>84</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

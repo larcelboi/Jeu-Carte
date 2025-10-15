@@ -37,10 +37,12 @@ btnCommencer.addEventListener("click", (e) => {
 boxCarte.addEventListener("click", (e) => {
     const carte_choisie = e.target;
     const type_emoji = ["🍇","🍈","🍉","🍊","🍋","🍏"]
+
     if (type_emoji.includes(carte_choisie.textContent)) {
         alert("Veuillez sélectionner une autre carte")
         return
     }
+
     if (carte_choisie.id in dict_carte_emoji) {
         carte_choisie.textContent = dict_carte_emoji[carte_choisie.id];
         retransitionEmojiCarte();
@@ -81,8 +83,9 @@ boxCarte.addEventListener("click", (e) => {
     function changerEmoji(type_emoji){
         while (true){
             let index_dans_liste = Math.floor(Math.random() * type_emoji.length)
-            const repetition_chiffre = liste_chiffre.filter( chiffre => chiffre.id === index_dans_liste).length
-            if (repetition_chiffre < 2 ) {
+            const emoji = type_emoji[index_dans_liste]
+            const repetition_text = liste_chiffre.filter( text => text.textContent === emoji).length
+            if (repetition_text < 2 ) {
                 liste_chiffre.push(carte_choisie)
                 carte_choisie.textContent = type_emoji[index_dans_liste];
                 dict_carte_emoji[carte_choisie.id] = type_emoji[index_dans_liste]
