@@ -12,7 +12,7 @@ body{
     padding: 10px;
 }
 .BoxCarte{
-    display: flex;
+    display: none;
 }
 .carte{
     background-color:black ;
@@ -32,11 +32,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    color:red;
     font-size: 25pt;
     transition: 0.4s ease-in-out;
-}
-.sous_carte:hover{
-    background-color:white;
-    color: white;
 }
