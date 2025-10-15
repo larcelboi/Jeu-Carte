@@ -100,9 +100,9 @@ boxCarte.addEventListener("click", (e) => {
                 alert("trouver")
             }
             else{
-                for (i = 0; i < liste_carte_paire.length; i++){
+                for (i = 0; i < liste_carte_paire.length;){
                     liste_carte_paire[i].textContent = "❓"
-                    liste_carte_paire.splice(i)
+                    liste_carte_paire.splice(i,1)
                 }
             }
         }
