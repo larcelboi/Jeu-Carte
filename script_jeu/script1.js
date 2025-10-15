@@ -58,6 +58,7 @@ boxCarte.addEventListener("click", (e) => {
             setTimeout(() => {
                 carte_choisie.style.backgroundColor = "black";
                 carte_choisie.style.color = "white";
+                CartPaire();
             }, 100 * 8)
         }
     }
@@ -92,16 +93,17 @@ boxCarte.addEventListener("click", (e) => {
 
     function CartPaire(){
         liste_carte_paire.push(carte_choisie);
+        let i = 0
         const nombre_carte_paire = liste_carte_paire.filter(text => text.textContent ===carte_choisie.textContent).length
         if (liste_carte_paire.length >= 2 ){
             if ( nombre_carte_paire % 2 === 0){
                 alert("trouver")
             }
             else{
-                for (let i = 0; i < liste_carte_paire.length; i++) {
+                for (i = 0; i < liste_carte_paire.length; i++){
                     liste_carte_paire[i].textContent = "❓"
+                    liste_carte_paire.splice(i)
                 }
-                liste_carte_paire.remove();
             }
         }
     }
