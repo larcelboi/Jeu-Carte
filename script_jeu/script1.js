@@ -32,18 +32,19 @@ btnCommencer.addEventListener("click", (e) => {
     }
     CreationCarte();
 
-})
+})//["🍇","🍈","🍉","🍊","🍋","🍏"]
 boxCarte.addEventListener("click", (e) => {
     const carte_choisie = e.target;
     const type_emoji = ["🍇","🍈","🍉","🍊","🍋","🍏"]
     if (carte_choisie.id in dict_carte_emoji) {
-        carte_choisie.text = dict_carte_emoji[carte_choisie.id];
+        carte_choisie.textContent = dict_carte_emoji[carte_choisie.id];
         Carte();
     }
-    else {
+    else{
+        Carte();
+    }
 
-    Carte();}
-    function Carte(){
+    function Carte() {
 
         if (e.target.classList.contains("sous_carte")) {
             console.log(carte_choisie);
@@ -51,44 +52,42 @@ boxCarte.addEventListener("click", (e) => {
             carte_choisie.style.backgroundColor = "white";
             carte_choisie.style.color = "white";
 
-            setTimeout(()=>{
+            setTimeout(() => {
                 carte_choisie.style.backgroundColor = "black";
                 carte_choisie.style.color = "white";
                 ChangerText(type_emoji)
-            },100 * 8)
+            }, 100 * 8)
         }
-        else{
-            return}
-        Carte();
-        function ChangerText(type_emoji){
-            while (true){
-                let index_dans_liste = Math.floor(Math.random() * type_emoji.length)
-                const repetition_chiffre = liste_chiffre.filter( chiffre => chiffre.id === index_dans_liste).length
-                if (repetition_chiffre < 2 ) {
-                    liste_chiffre.push(carte_choisie)
-                    carte_choisie.textContent = type_emoji[index_dans_liste];
-                    dict_carte_emoji[carte_choisie.id] = type_emoji[index_dans_liste]
-                    CartPaire();
-                    break;
-                }
+    }
+    function ChangerText(type_emoji){
+        while (true){
+            let index_dans_liste = Math.floor(Math.random() * type_emoji.length)
+            const repetition_chiffre = liste_chiffre.filter( chiffre => chiffre.id === index_dans_liste).length
+            if (repetition_chiffre < 2 ) {
+                liste_chiffre.push(carte_choisie)
+                carte_choisie.textContent = type_emoji[index_dans_liste];
+                dict_carte_emoji[carte_choisie.id] = type_emoji[index_dans_liste]
+                CartPaire();
+                break;
             }
         }
     }
 
-        function CartPaire(){
-            liste_carte_paire.push(carte_choisie);
-            if (liste_carte_paire.length === 2){
-                if(liste_carte_paire.filter(text => text ===carte_choisie.textContent).length ===2){
-                    alert("trouver")
+    function CartPaire(){
+        liste_carte_paire.push(carte_choisie);
+        const nombre_carte_paire = liste_carte_paire.filter(text => text.textContent ===carte_choisie.textContent).length
+        if (liste_carte_paire.length >= 2 ){
+            if ( nombre_carte_paire % 2 === 0){
+                alert("trouver")
+            }
+            else{
+                for (let i = 0; i < liste_carte_paire.length; i++) {
+                    liste_carte_paire[i].textContent = "❓"
                 }
-                else{
-                    for (i = 0; i < liste_carte_paire.length; i++) {
-                        liste_carte_paire[i].textContent = "❓"
-                    }
-                    liste_carte_paire.remove();
-                }
+                liste_carte_paire.remove();
             }
         }
+    }
 
 
 
