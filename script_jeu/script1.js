@@ -90,7 +90,7 @@ btnCommencer.addEventListener("click", (e) => {
                     }, 100 * 5)
                 }
                 TournerCarte();
-                function RetournerCarte(){
+                function RetournerCarte(sous_carte_front,sous_carte_behind){
                     sous_carte_behind.style.transition = "backgroundcolor 0.5 ease-in-out,color 0.5 ease-in-out ";
                     sous_carte_behind.style.backgroundColor = "white";
                     sous_carte_behind.style.color = "white";
@@ -139,8 +139,8 @@ btnCommencer.addEventListener("click", (e) => {
                             }
                         }
                         else{
-                            liste_carte_back.forEach(function(card){
-                                RetournerCarte();
+                            liste_carte_back.forEach(function(card,index){
+                                RetournerCarte(liste_carte_front[index],sous_carte_front[index]);
 
                             })
                             ChangerTentative();
