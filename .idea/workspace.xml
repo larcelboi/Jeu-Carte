@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a4adbeb-4691-482d-9171-efc1586009ae" name="Changes" comment="asasas">
+    <list default="true" id="0a4adbeb-4691-482d-9171-efc1586009ae" name="Changes" comment="asdasda">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script_jeu/script1.js" beforeDir="false" afterPath="$PROJECT_DIR$/script_jeu/script1.js" afterDir="false" />
     </list>
@@ -97,7 +97,8 @@
       <workItem from="1760551736112" duration="236000" />
       <workItem from="1760551983182" duration="93000" />
       <workItem from="1760554465694" duration="701000" />
-      <workItem from="1760564608879" duration="1157000" />
+      <workItem from="1760564608879" duration="1287000" />
+      <workItem from="1760611653445" duration="1445000" />
     </task>
     <task id="LOCAL-00001" summary="créatuion carte">
       <option name="closed" value="true" />
@@ -187,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760564644678</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="asdasda">
+      <option name="closed" value="true" />
+      <created>1760566107895</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1760566107895</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,16 +210,22 @@
     <MESSAGE value="sdfs" />
     <MESSAGE value="fix a bug" />
     <MESSAGE value="asasas" />
-    <option name="LAST_COMMIT_MESSAGE" value="asasas" />
+    <MESSAGE value="asdasda" />
+    <option name="LAST_COMMIT_MESSAGE" value="asdasda" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/script_jeu/script1.js</url>
-          <line>84</line>
-          <properties lambdaOrdinal="-1" />
+          <line>93</line>
           <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/script_jeu/script1.js</url>
+          <line>116</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
