@@ -43,9 +43,7 @@ btnCommencer.addEventListener("click", (e) => {
 boxCarte.addEventListener("click", (e) => {
     const carte_choisie = e.target;
     const type_emoji = ["🍇","🍈","🍉","🍊","🍋","🍏"]
-
     if (type_emoji.includes(carte_choisie.textContent)) {
-        alert("Veuillez sélectionner une autre carte")
         return
     }
     // Redonner l'emoji à la carte qui a été retourner
@@ -77,7 +75,6 @@ boxCarte.addEventListener("click", (e) => {
     }
     function transitionEmojiCarte() {
         if (e.target.classList.contains("sous_carte")) {
-            console.log(carte_choisie);
             carte_choisie.style.transition = "backgroundcolor 0.5 ease-in-out,color 0.5 ease-in-out ";
             carte_choisie.style.backgroundColor = "white";
             carte_choisie.style.color = "white";
@@ -94,14 +91,22 @@ boxCarte.addEventListener("click", (e) => {
     function changerEmoji(type_emoji){
         while (true){
             let index_dans_liste = Math.floor(Math.random() * type_emoji.length)
+            carte_choisie.textContent = type_emoji[index_dans_liste];
             const emoji = type_emoji[index_dans_liste]
+            liste_chiffre.push(carte_choisie)
+
             const repetition_text = liste_chiffre.filter( text => text.textContent === emoji).length
+
             if (repetition_text < 2 ) {
-                liste_chiffre.push(carte_choisie)
                 carte_choisie.textContent = type_emoji[index_dans_liste];
                 dict_carte_emoji[carte_choisie.id] = type_emoji[index_dans_liste]
+                console.log(dict_carte_emoji)
                 setTimeout(trouverSiCartePaire,1000*2)
                 break;
+            }
+            else{
+                console.log(`Carte${carte_choisie.id} va être enlever`)
+                liste_chiffre.pop()
             }
         }
     }
@@ -111,11 +116,10 @@ boxCarte.addEventListener("click", (e) => {
         const nombre_carte_paire = liste_carte_paire.filter(text => text.textContent ===carte_choisie.textContent).length
         if (liste_carte_paire.length >= 2 * nombre_carte_valie ) {
             if ( nombre_carte_paire % 2 === 0){
-                alert("trouver")
                 nombre_carte_valie ++
             }
             else{
-                for (i = 0; i < liste_carte_paire.length;){
+                for (let i = 0; i < liste_carte_paire.length;){
                     liste_carte_paire[i].textContent = "❓"
                     liste_carte_paire.shift()
                     nombre_carte_valie = 1
