@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a4adbeb-4691-482d-9171-efc1586009ae" name="Changes" comment="asdasda">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0a4adbeb-4691-482d-9171-efc1586009ae" name="Changes" comment="asdasdaadas">
       <change beforePath="$PROJECT_DIR$/script_jeu/script1.js" beforeDir="false" afterPath="$PROJECT_DIR$/script_jeu/script1.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +113,7 @@
       <workItem from="1760564608879" duration="1287000" />
       <workItem from="1760611653445" duration="1445000" />
       <workItem from="1760616800081" duration="5566000" />
-      <workItem from="1760623404949" duration="970000" />
+      <workItem from="1760623404949" duration="1364000" />
     </task>
     <task id="LOCAL-00001" summary="créatuion carte">
       <option name="closed" value="true" />
@@ -212,7 +211,23 @@
       <option name="project" value="LOCAL" />
       <updated>1760566107895</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="asdasda">
+      <option name="closed" value="true" />
+      <created>1760624392551</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1760624392551</updated>
+    </task>
+    <task id="LOCAL-00014" summary="asdasdaadas">
+      <option name="closed" value="true" />
+      <created>1760624582109</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1760624582109</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,7 +242,8 @@
     <MESSAGE value="fix a bug" />
     <MESSAGE value="asasas" />
     <MESSAGE value="asdasda" />
-    <option name="LAST_COMMIT_MESSAGE" value="asdasda" />
+    <MESSAGE value="asdasdaadas" />
+    <option name="LAST_COMMIT_MESSAGE" value="asdasdaadas" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

@@ -113,6 +113,7 @@ boxCarte.addEventListener("click", (e) => {
         carte_choisie.textContent = emoji;
         dict_carte_emoji[carte_choisie.id] = emoji;
         console.log(dict_carte_emoji);
+        console.log(available.length);
 
         setTimeout(trouverSiCartePaire, 1000);
     }
