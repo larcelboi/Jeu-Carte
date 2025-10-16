@@ -1,9 +1,12 @@
 const btnCommencer = document.querySelector("#btnCom");
 const boxCarte = document.querySelector("#boxC");
+
 const liste_carte_paire = []
 const dict_carte_emoji = {}
+
 let commencer_prtie = false
 let nombre_carte_valie = 1
+
 
 // try to use inner html with this sh
 
@@ -40,8 +43,16 @@ btnCommencer.addEventListener("click", (e) => {
 
 })//["🍇","🍈","🍉","🍊","🍋","🍏"]
 boxCarte.addEventListener("click", (e) => {
+
     const carte_choisie = e.target;
     const type_emoji = ["🍇","🍈","🍉","🍊","🍋","🍏"]
+    setInterval(myTimer, 1);
+
+    function myTimer() {
+        const d = new Date();
+        document.getElementById("clock").innerHTML = d.toLocaleTimeString();
+    }
+
     if (type_emoji.includes(carte_choisie.textContent)) {
         return
     }
