@@ -1,6 +1,5 @@
 const btnCommencer = document.querySelector("#btnCom");
 const boxCarte = document.querySelector("#boxC");
-const liste_chiffre = []
 const liste_carte_paire = []
 const dict_carte_emoji = {}
 let commencer_prtie = false
@@ -69,7 +68,7 @@ boxCarte.addEventListener("click", (e) => {
                 carte_choisie.style.color = "white";
                 // Remettre l'emoji de la carte
                 carte_choisie.textContent = emoji_id
-                setTimeout(trouverSiCartePaire,1000 * 2)
+                setTimeout(trouverSiCartePaire,1000)
             }, 100 * 8)
         }
     }
@@ -115,7 +114,7 @@ boxCarte.addEventListener("click", (e) => {
         dict_carte_emoji[carte_choisie.id] = emoji;
         console.log(dict_carte_emoji);
 
-        setTimeout(trouverSiCartePaire, 1000 * 2);
+        setTimeout(trouverSiCartePaire, 1000);
     }
 
 
