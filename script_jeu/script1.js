@@ -88,28 +88,36 @@ boxCarte.addEventListener("click", (e) => {
         }
     }
 
-    function changerEmoji(type_emoji){
-        while (true){
-            let index_dans_liste = Math.floor(Math.random() * type_emoji.length)
-            carte_choisie.textContent = type_emoji[index_dans_liste];
-            const emoji = type_emoji[index_dans_liste]
-            liste_chiffre.push(carte_choisie)
+    function changerEmoji(type_emoji) {
+        // Count how many times each emoji was already used
+        const emoji_counts = {};
 
-            const repetition_text = liste_chiffre.filter( text => text.textContent === emoji).length
-
-            if (repetition_text < 2 ) {
-                carte_choisie.textContent = type_emoji[index_dans_liste];
-                dict_carte_emoji[carte_choisie.id] = type_emoji[index_dans_liste]
-                console.log(dict_carte_emoji)
-                setTimeout(trouverSiCartePaire,1000*2)
-                break;
-            }
-            else{
-                console.log(`Carte${carte_choisie.id} va être enlever`)
-                liste_chiffre.pop()
-            }
+        // Count from dict_carte_emoji since it holds all assigned emojis
+        for (const key in dict_carte_emoji) {
+            const emoji = dict_carte_emoji[key];
+            emoji_counts[emoji] = (emoji_counts[emoji] || 0) + 1;
         }
+
+        // Filter emojis that are still available (less than 2 used)
+        const available = type_emoji.filter(e => (emoji_counts[e] || 0) < 2);
+
+        if (available.length === 0) {
+            console.warn("Aucun emoji disponible — toutes les paires ont déjà été utilisées");
+            return;
+        }
+
+        // Choose random emoji from remaining ones
+        const random_index = Math.floor(Math.random() * available.length);
+        const emoji = available[random_index];
+
+        // Assign it
+        carte_choisie.textContent = emoji;
+        dict_carte_emoji[carte_choisie.id] = emoji;
+        console.log(dict_carte_emoji);
+
+        setTimeout(trouverSiCartePaire, 1000 * 2);
     }
+
 
     function trouverSiCartePaire(){
         liste_carte_paire.push(carte_choisie);
