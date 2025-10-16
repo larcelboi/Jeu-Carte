@@ -1,13 +1,16 @@
 const btnCommencer = document.querySelector("#btnCom");
 const boxCarte = document.querySelector("#boxC");
+const clock = document.querySelector("#clock");
+const nbre_Essaie = document.querySelector("#nb_essais");
 
 const liste_carte_paire = []
 const dict_carte_emoji = {}
+const liste_carte = []
 
 let commencer_prtie = false
 let nombre_carte_valie = 1
-
-
+let nombre_tentative = 8
+nbre_Essaie.textContent = `Nombres Tentatives : ${nombre_tentative}`
 // try to use inner html with this sh
 
 btnCommencer.addEventListener("click", (e) => {
@@ -35,6 +38,7 @@ btnCommencer.addEventListener("click", (e) => {
             sous_carte.textContent = "❓";
             // Ajouter sous carte dans carte
             carte.append(sous_carte);
+            liste_carte.push(sous_carte);
             //Ajouter tous les cartes dans la boite de carte
             boxCarte.appendChild(carte);
         }
@@ -43,15 +47,14 @@ btnCommencer.addEventListener("click", (e) => {
 
 })//["🍇","🍈","🍉","🍊","🍋","🍏"]
 boxCarte.addEventListener("click", (e) => {
-
     const carte_choisie = e.target;
     const type_emoji = ["🍇","🍈","🍉","🍊","🍋","🍏"]
-    setInterval(myTimer, 1);
+    //setInterval(myTimer, 1);
 
-    function myTimer() {
-        const d = new Date();
-        document.getElementById("clock").innerHTML = d.toLocaleTimeString();
-    }
+    //function myTimer() {
+    //    const d = new Date();
+    //    clock.innerHTML = d.toLocaleTimeString();
+    //}
 
     if (type_emoji.includes(carte_choisie.textContent)) {
         return
@@ -65,7 +68,20 @@ boxCarte.addEventListener("click", (e) => {
     else{
         transitionEmojiCarte();
     }
+    function ChangerTentative(){
+        nombre_tentative--
+        nbre_Essaie.textContent = `Nombres Tentative : ${nombre_tentative}`
+        if (nombre_tentative === 0) {
+            alert("You failed the game\nClick ok to see the locations of all the cards");
+            console.log(dict_carte_emoji)
+            liste_carte.forEach(function(card){
+                console.log(card.id);
+                card.textContent = dict_carte_emoji[card.id];
+            })
 
+
+        }
+    }
     function reTransitionEmojiCarte(emoji_id) {
         if (e.target.classList.contains("sous_carte")) {
             // Change style de la carte
@@ -133,18 +149,24 @@ boxCarte.addEventListener("click", (e) => {
     function trouverSiCartePaire(){
         liste_carte_paire.push(carte_choisie);
         const nombre_carte_paire = liste_carte_paire.filter(text => text.textContent ===carte_choisie.textContent).length
+
         if (liste_carte_paire.length >= 2 * nombre_carte_valie ) {
             if ( nombre_carte_paire % 2 === 0){
                 nombre_carte_valie ++
             }
             else{
+                console.log("liste_carte_paire length:", liste_carte_paire.length);
+                console.log("nombre_carte_paire:", nombre_carte_paire);
                 for (let i = 0; i < liste_carte_paire.length;){
                     liste_carte_paire[i].textContent = "❓"
                     liste_carte_paire.shift()
-                    nombre_carte_valie = 1
                 }
+                ChangerTentative();
+                nombre_carte_valie = 1
+
             }
         }
+
     }
 
 

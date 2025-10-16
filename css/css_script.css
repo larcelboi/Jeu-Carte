@@ -35,3 +35,9 @@ body{
     font-size: 25pt;
     transition: 0.4s ease-in-out;
 }
+.clockboite{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:  column;
+}
