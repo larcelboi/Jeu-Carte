@@ -42,3 +42,7 @@ body{
     align-items: center;
     flex-direction:  column;
 }
+.invisible{
+    display: none;
+
+}

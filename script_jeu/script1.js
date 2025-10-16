@@ -4,13 +4,18 @@ const clock = document.querySelector("#clock");
 const nbre_Essaie = document.querySelector("#nb_essais");
 
 const liste_carte_paire = []
+liste_carte_back = []
 const dict_carte_emoji = {}
 const liste_carte = []
+const liste_carte_front = []
+const liste_emoji = []
 
 let commencer_prtie = false
 let nombre_carte_valie = 1
 let nombre_tentative = 8
 nbre_Essaie.textContent = `Nombres Tentatives : ${nombre_tentative}`
+const type_emoji = ["🍇","🍈","🍉","🍊","🍋","🍏"]
+
 // try to use inner html with this sh
 
 btnCommencer.addEventListener("click", (e) => {
@@ -25,149 +30,132 @@ btnCommencer.addEventListener("click", (e) => {
     function  CreationCarte(){
         // Création des 12 cartes
         for (let i = 0; i < 12; i++) {
-            // Création carte
+            let emoji = ""
+
+            while (true){
+                // Choose random emoji from remaining ones
+                const random_index = Math.floor(Math.random() * type_emoji.length);
+                emoji = type_emoji[random_index];
+                liste_emoji.push(emoji)
+
+                // Filter emojis that are still available (less than 2 used)
+                const available = liste_emoji.filter(e => e ===emoji).length;
+
+                if (available <= 2) {
+                    break
+                }
+            }
+
+            //Création carte
+            const sous_carte_behind = document.createElement("div");
+            const sous_carte_front = document.createElement("div");
             const carte = document.createElement("div");
-            // Appliquer css carte
+
+            // Assign it
+            sous_carte_behind.textContent = "❓";
+            sous_carte_front.textContent = emoji;
+
+            sous_carte_behind.setAttribute("data-face", "recto");
+            sous_carte_behind.classList.add("sous_carte");
+
+            sous_carte_behind.classList.add("sous_carte");
+            sous_carte_front.classList.add("sous_carte");
+            sous_carte_front.classList.add("invisible");
             carte.classList.add("carte");
-            const sous_carte = document.createElement("div");
-            //Donner un ID au carte
-            sous_carte.id = `carte-${i}`;
-            // Appliquer css sous_carte
-            sous_carte.classList.add("sous_carte");
-            // Changer le text à ?
-            sous_carte.textContent = "❓";
+
+
             // Ajouter sous carte dans carte
-            carte.append(sous_carte);
-            liste_carte.push(sous_carte);
+            carte.append(sous_carte_behind);
+            carte.append(sous_carte_front);
+            liste_carte.push(carte);
             //Ajouter tous les cartes dans la boite de carte
             boxCarte.appendChild(carte);
+
+
+
+            carte.addEventListener("click", (e) => {
+                function TournerCarte(){
+                    sous_carte_behind.style.transition = "backgroundcolor 0.5 ease-in-out,color 0.5 ease-in-out ";
+                    sous_carte_behind.style.backgroundColor = "white";
+                    sous_carte_behind.style.color = "white";
+
+
+                    setTimeout(() => {
+                        sous_carte_behind.style.backgroundColor = "black";
+                        sous_carte_behind.style.color = "white";
+                        sous_carte_behind.classList.toggle("invisible");
+                        sous_carte_front.classList.toggle("invisible");
+                        trouverSiCartePaire(sous_carte_behind,sous_carte_front);
+
+                    }, 100 * 5)
+                }
+                TournerCarte();
+                function RetournerCarte(){
+                    sous_carte_behind.style.transition = "backgroundcolor 0.5 ease-in-out,color 0.5 ease-in-out ";
+                    sous_carte_behind.style.backgroundColor = "white";
+                    sous_carte_behind.style.color = "white";
+
+                        sous_carte_behind.style.backgroundColor = "black";
+                        sous_carte_behind.style.color = "white";
+                        sous_carte_behind.classList.toggle("invisible");
+                        sous_carte_front.classList.toggle("invisible");
+
+                }
+
+
+                function ChangerTentative(){
+                    nombre_tentative--
+                    nbre_Essaie.textContent = `Nombres Tentative : ${nombre_tentative}`
+                    if (nombre_tentative === 0) {
+                        alert("You failed the game\nClick ok to see the locations of all the cards");
+                        console.log(dict_carte_emoji)
+                        liste_carte.forEach(function(card){
+                            console.log(card.id);
+                            card.textContent = dict_carte_emoji[card.id];
+                        })
+
+
+                    }
+                }
+                function trouverSiCartePaire(sous_carte_behind,sous_carte_front){
+                    liste_carte_front.push(sous_carte_front)
+                    liste_carte_back.push(sous_carte_behind)
+
+                    const nombre_carte_paire = liste_carte_front.filter(text => text.textContent ===liste_carte_front[0].textContent).length
+                    // Check si les deux cartes ont le même texte
+                    if (liste_carte_front.length === 2) {
+                        if (nombre_carte_paire === 2) {
+                            liste_carte_back.forEach(function(card){liste_carte_paire.push(card)})
+                            if (liste_carte_back.length === 2 * nombre_carte_valie) {
+                                nombre_carte_valie++
+
+                                liste_carte_back.forEach(function(card){
+                                    liste_carte_back.shift()
+                                })
+                                liste_carte_front.forEach(function(card){
+                                    liste_carte_front.shift()
+
+                                })
+                            }
+                        }
+                        else{
+                            liste_carte_back.forEach(function(card){
+                                RetournerCarte();
+
+                            })
+                            ChangerTentative();
+                        }
+                    }
+
+
+                }
+
+            })
         }
     }
     CreationCarte();
 
-})//["🍇","🍈","🍉","🍊","🍋","🍏"]
-boxCarte.addEventListener("click", (e) => {
-    const carte_choisie = e.target;
-    const type_emoji = ["🍇","🍈","🍉","🍊","🍋","🍏"]
-    //setInterval(myTimer, 1);
 
-    //function myTimer() {
-    //    const d = new Date();
-    //    clock.innerHTML = d.toLocaleTimeString();
-    //}
-
-    if (type_emoji.includes(carte_choisie.textContent)) {
-        return
-    }
-    // Redonner l'emoji à la carte qui a été retourner
-    if (carte_choisie.id in dict_carte_emoji) {
-        // Prend l'emoji de l'id de la carte
-        const emoji_id = dict_carte_emoji[carte_choisie.id];
-        reTransitionEmojiCarte(emoji_id);
-    }
-    else{
-        transitionEmojiCarte();
-    }
-    function ChangerTentative(){
-        nombre_tentative--
-        nbre_Essaie.textContent = `Nombres Tentative : ${nombre_tentative}`
-        if (nombre_tentative === 0) {
-            alert("You failed the game\nClick ok to see the locations of all the cards");
-            console.log(dict_carte_emoji)
-            liste_carte.forEach(function(card){
-                console.log(card.id);
-                card.textContent = dict_carte_emoji[card.id];
-            })
-
-
-        }
-    }
-    function reTransitionEmojiCarte(emoji_id) {
-        if (e.target.classList.contains("sous_carte")) {
-            // Change style de la carte
-            carte_choisie.style.transition = "backgroundcolor 0.5 ease-in-out,color 0.5 ease-in-out ";
-            carte_choisie.style.backgroundColor = "white";
-            carte_choisie.style.color = "white";
-
-            // Attendre avant de changer le style de la carte
-            setTimeout(() => {
-                carte_choisie.style.backgroundColor = "black";
-                carte_choisie.style.color = "white";
-                // Remettre l'emoji de la carte
-                carte_choisie.textContent = emoji_id
-                setTimeout(trouverSiCartePaire,1000)
-            }, 100 * 8)
-        }
-    }
-    function transitionEmojiCarte() {
-        if (e.target.classList.contains("sous_carte")) {
-            carte_choisie.style.transition = "backgroundcolor 0.5 ease-in-out,color 0.5 ease-in-out ";
-            carte_choisie.style.backgroundColor = "white";
-            carte_choisie.style.color = "white";
-
-            setTimeout(() => {
-                carte_choisie.style.backgroundColor = "black";
-                carte_choisie.style.color = "white";
-                carte_choisie.textContent = e
-                changerEmoji(type_emoji)
-            }, 100 * 8)
-        }
-    }
-
-    function changerEmoji(type_emoji) {
-        // Count how many times each emoji was already used
-        const emoji_counts = {};
-
-        // Count from dict_carte_emoji since it holds all assigned emojis
-        for (const key in dict_carte_emoji) {
-            const emoji = dict_carte_emoji[key];
-            emoji_counts[emoji] = (emoji_counts[emoji] || 0) + 1;
-        }
-
-        // Filter emojis that are still available (less than 2 used)
-        const available = type_emoji.filter(e => (emoji_counts[e] || 0) < 2);
-
-        if (available.length === 0) {
-            console.warn("Aucun emoji disponible — toutes les paires ont déjà été utilisées");
-            return;
-        }
-
-        // Choose random emoji from remaining ones
-        const random_index = Math.floor(Math.random() * available.length);
-        const emoji = available[random_index];
-
-        // Assign it
-        carte_choisie.textContent = emoji;
-        dict_carte_emoji[carte_choisie.id] = emoji;
-        console.log(dict_carte_emoji);
-        console.log(available.length);
-
-        setTimeout(trouverSiCartePaire, 1000);
-    }
-
-
-    function trouverSiCartePaire(){
-        liste_carte_paire.push(carte_choisie);
-        const nombre_carte_paire = liste_carte_paire.filter(text => text.textContent ===carte_choisie.textContent).length
-
-        if (liste_carte_paire.length >= 2 * nombre_carte_valie ) {
-            if ( nombre_carte_paire % 2 === 0){
-                nombre_carte_valie ++
-            }
-            else{
-                console.log("liste_carte_paire length:", liste_carte_paire.length);
-                console.log("nombre_carte_paire:", nombre_carte_paire);
-                for (let i = 0; i < liste_carte_paire.length;){
-                    liste_carte_paire[i].textContent = "❓"
-                    liste_carte_paire.shift()
-                }
-                ChangerTentative();
-                nombre_carte_valie = 1
-
-            }
-        }
-
-    }
 
 
 
