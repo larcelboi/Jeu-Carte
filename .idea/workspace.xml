@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0a4adbeb-4691-482d-9171-efc1586009ae" name="Changes" comment="ghgfdvs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/css_script.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/css_script.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script_jeu/script1.js" beforeDir="false" afterPath="$PROJECT_DIR$/script_jeu/script1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_jeu_mem/site_mem.html" beforeDir="false" afterPath="$PROJECT_DIR$/site_jeu_mem/site_mem.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,12 +31,12 @@
     &quot;assignee&quot;: &quot;larcelboi&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/larcelboi/Jeu-Carte.git",
-    "accountId": "f1575174-6cf0-4d2a-8760-092583da25ca"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/larcelboi/Jeu-Carte.git&quot;,
+    &quot;accountId&quot;: &quot;f1575174-6cf0-4d2a-8760-092583da25ca&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -48,27 +48,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JavaScript Debug.bob.html.executor": "Run",
-    "JavaScript Debug.sie_mem.html.executor": "Run",
-    "JavaScript Debug.site_mem.html.executor": "Debug",
-    "Node.js.sadsadsa.js.executor": "Run",
-    "Node.js.script1.js.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/larce_3viq11h/WebstormProjects/Jeu-Carte/script_jeu",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.bob.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.sie_mem.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.site_mem.html.executor&quot;: &quot;Debug&quot;,
+    &quot;Node.js.sadsadsa.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.script1.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/larce_3viq11h/WebstormProjects/Jeu-Carte/script_jeu&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\larce_3viq11h\WebstormProjects\Jeu-Carte\script_jeu" />
@@ -287,9 +287,9 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/script_jeu/script1.js</url>
-          <line>82</line>
+          <line>154</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="8" />
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
