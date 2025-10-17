@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a4adbeb-4691-482d-9171-efc1586009ae" name="Changes" comment="ghgfdvs">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sadsadsa.js" beforeDir="false" afterPath="$PROJECT_DIR$/sadsadsa.js" afterDir="false" />
+    <list default="true" id="0a4adbeb-4691-482d-9171-efc1586009ae" name="Changes" comment="new sh">
       <change beforePath="$PROJECT_DIR$/script_jeu/script1.js" beforeDir="false" afterPath="$PROJECT_DIR$/script_jeu/script1.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -118,7 +116,7 @@
       <workItem from="1760623404949" duration="1457000" />
       <workItem from="1760632190924" duration="760000" />
       <workItem from="1760634894603" duration="10899000" />
-      <workItem from="1760717027829" duration="2317000" />
+      <workItem from="1760717027829" duration="2631000" />
     </task>
     <task id="LOCAL-00001" summary="créatuion carte">
       <option name="closed" value="true" />
@@ -264,7 +262,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760641440088</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="new sh">
+      <option name="closed" value="true" />
+      <created>1760719557687</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1760719557687</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,21 +287,16 @@
     <MESSAGE value="asdasda" />
     <MESSAGE value="asdasdaadas" />
     <MESSAGE value="ghgfdvs" />
-    <option name="LAST_COMMIT_MESSAGE" value="ghgfdvs" />
+    <MESSAGE value="new sh" />
+    <option name="LAST_COMMIT_MESSAGE" value="new sh" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/script_jeu/script1.js</url>
-          <line>198</line>
+          <line>197</line>
           <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/script_jeu/script1.js</url>
-          <line>27</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

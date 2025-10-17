@@ -43,14 +43,13 @@ btnCommencer.addEventListener("click", () => {
                 clock.textContent = "0:00";
                 alert("Time's up!");
                 canClick = false;
-                setTimeout(() => {
                     liste_carte.forEach(card => {
                         const front = card.children[1];
                         const back = card.children[0];
                         back.classList.add("invisible");
                         front.classList.remove("invisible");
                     });
-                }, 800); // matches your 700 ms flip delay
+
                 return;
             }
 
