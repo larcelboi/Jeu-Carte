@@ -4,6 +4,10 @@ const btnRecommencer = document.querySelector("#btnRe");
 const clock = document.querySelector("#clock");
 const nbre_Essaie = document.querySelector("#nb_essais");
 
+let minutes = 5
+let seconds = 0
+clock.textContent = `${minutes}:${0}${0}`
+
 const liste_carte = [];
 const liste_carte_front = [];
 const liste_carte_back = [];
@@ -27,6 +31,46 @@ btnCommencer.addEventListener("click", () => {
     }
     commencer_prtie = true;
     boxCarte.style.display = "flex";
+
+    let timerInterval;
+
+    function startTimer() {
+        clock.textContent = formatTime(minutes, seconds);
+
+        timerInterval = setInterval(() => {
+            if (minutes === 0 && seconds === 0) {
+                clearInterval(timerInterval); // stop the timer
+                clock.textContent = "0:00";
+                alert("Time's up!");
+                canClick = false;
+                setTimeout(() => {
+                    liste_carte.forEach(card => {
+                        const front = card.children[1];
+                        const back = card.children[0];
+                        back.classList.add("invisible");
+                        front.classList.remove("invisible");
+                    });
+                }, 800); // matches your 700 ms flip delay
+                return;
+            }
+
+            if (seconds === 0) {
+                minutes--;
+                seconds = 59;
+            } else {
+                seconds--;
+            }
+
+            clock.textContent = formatTime(minutes, seconds);
+        }, 1000);
+    }
+
+    function formatTime(min, sec) {
+        const paddedSec = sec < 10 ? `0${sec}` : sec;
+        return `${min}:${paddedSec}`;
+    }
+
+
 
     function CreationCarte() {
         for (let i = 0; i < 12; i++) {
@@ -163,6 +207,8 @@ btnCommencer.addEventListener("click", () => {
     }
 
     CreationCarte();
+    startTimer();
+
     btnRecommencer.addEventListener("click", (e) => {
         alert("Creating new cards")
         boxCarte.replaceChildren();
@@ -174,6 +220,10 @@ btnCommencer.addEventListener("click", () => {
         nombre_carte_valide = 1
         nombre_tentative = 8
         nbre_Essaie.textContent = `Nombres Tentatives : ${nombre_tentative}`
+        clearInterval(timerInterval);
+        minutes = 5;
+        seconds = 0;
         CreationCarte();
+        startTimer();
     })
 });
