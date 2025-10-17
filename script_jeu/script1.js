@@ -63,7 +63,7 @@ btnCommencer.addEventListener("click", () => {
             clock.textContent = formatTime(minutes, seconds);
         }, 1000);
     }
-
+    // by chagpt icl
     function formatTime(min, sec) {
         const paddedSec = sec < 10 ? `0${sec}` : sec;
         return `${min}:${paddedSec}`;
